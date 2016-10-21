@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <TextView
+        android:text="@string/dvprsIntroText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:paddingLeft="50dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
+
+    <dvprs.dvcipm.org.dvprs_data_collection.TouchImageView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/img"
+        android:src="@drawable/scale_dvprs"
+        android:layout_marginBottom="50dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true" >
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/dvprs0"
+                android:layout_weight="1"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/dvprs1"
+                android:layout_weight="1"
+
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/dvprs2"
+                android:layout_weight="1"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/dvprs3"
+                android:layout_weight="1"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/dvprs4"
+                android:layout_weight="1"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/dvprs5"
+                android:layout_weight="1"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/dvprs6"
+                android:layout_weight="1"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/dvprs7"
+                android:layout_weight="1"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/dvprs8"
+                android:layout_weight="1"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/dvprs9"
+                android:layout_weight="1"
+                />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/dvprs10"
+                android:layout_weight="1"
+                />
+        </RadioGroup>
+
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/dvprs0"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:id="@+id/imageButton0"-->
+            <!--android:layout_weight="1" />-->
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/dvprs1"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:id="@+id/imageButton1"-->
+            <!--android:layout_weight="1" />-->
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/dvprs2"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:id="@+id/imageButton2"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/dvprs3"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:id="@+id/imageButton3"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/dvprs4"-->
+            <!--android:scaleType="fitCenter"-->
+
+            <!--android:id="@+id/imageButton4"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/dvprs5"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:id="@+id/imageButton5"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/dvprs6"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:id="@+id/imageButton6"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/dvprs7"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:id="@+id/imageButton7"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/dvprs8"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:id="@+id/imageButton8"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/dvprs9"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:id="@+id/imageButton9"-->
+            <!--android:layout_weight="1" />-->
+
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/dvprs10"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:id="@+id/imageButton10"-->
+            <!--android:layout_weight="1" />-->
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/submitButtonDVPRS" />
+
+
+</RelativeLayout>
