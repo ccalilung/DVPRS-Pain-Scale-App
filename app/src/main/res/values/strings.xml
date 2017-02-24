@@ -11,6 +11,7 @@
     <string name="_8">8</string>
     <string name="_9">9</string>
     <string name="_10">10</string>
+    <string name="lastValue">Test</string>
     <string name="dvprsIntroText">Please select the value that corresponds with your current pain level:</string>
     <string name="dvprsActivityText">Select the one number that describes how, during the past 24 hours, pain has interfered with your usual ACTIVITY?</string>
     <string name="dvprsSleepText">Select the one number that describes how, during the past 24 hours, pain has interfered with your usual SLEEP?</string>
