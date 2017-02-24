@@ -48,14 +48,24 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-        //Need to add Listener for DVPRS Data Entry Activity
-        //Listener for Video Button -> DvprsVideoActivity
+        //Listener for DVPRS Data Entry
         Button startDvprs = (Button) findViewById(R.id.dvprsSurvey);
         startDvprs.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         Intent surveyIntent = new Intent(MainActivity.this, DvprsEntry.class);
                         MainActivity.this.startActivity(surveyIntent);
+                    }
+                }
+        );
+
+        //Listener for DVPRS last value recall
+        Button lastDvprs = (Button) findViewById(R.id.dvprsLastScore);
+        lastDvprs.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+                        Intent recallIntent = new Intent(MainActivity.this, DvprsLast.class);
+                        MainActivity.this.startActivity(recallIntent);
                     }
                 }
         );

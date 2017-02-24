@@ -11,22 +11,17 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
-
-import static android.R.attr.layout_centerVertical;
-
 
 public class DvprsEntry extends AppCompatActivity {
 
@@ -1287,6 +1282,8 @@ public class DvprsEntry extends AppCompatActivity {
 
             if (count==5) {
                 finish();
+                Intent mainIntent = new Intent(DvprsEntry.this, MainActivity.class);
+                DvprsEntry.this.startActivity(mainIntent);
                 //do whatever you need
             }
             return true;
@@ -1308,7 +1305,6 @@ public class DvprsEntry extends AppCompatActivity {
     }
 
     public void goBack() {
-        Intent mainIntent = new Intent(DvprsEntry.this, MainActivity.class);
         if (Activity == -99) {
             switch (currentScreen) {
                 case 0:

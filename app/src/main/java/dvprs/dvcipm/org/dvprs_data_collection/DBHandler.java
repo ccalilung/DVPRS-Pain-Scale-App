@@ -69,35 +69,40 @@ public class DBHandler extends SQLiteOpenHelper {
     public String dbToString() {
         String dbString = "";
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_SCORES + " LIMIT 10 ORDER BY " + COLUMN_ID + " DESC";
+        String query = "SELECT * FROM " + TABLE_SCORES + " ORDER BY " + COLUMN_ID + " DESC LIMIT 1";
+        Log.d("String Message: ", "Create Query");
 
         Cursor c = sqLiteDatabase.rawQuery(query, null);
-        c.moveToFirst();
+        Log.d("String Message: ", "Create Cursor");
 
-        while(!c.isAfterLast()){
-            if(c.getString(c.getColumnIndex("id")) != null){
-                dbString += "ID: ";
-                dbString += c.getString(c.getColumnIndex("id"));
-                dbString += "DVPRS: ";
-                dbString += c.getString(c.getColumnIndex("dvprs"));
-                dbString += "Activity: ";
-                dbString += c.getString(c.getColumnIndex("activity"));
-                dbString += "Sleep: ";
-                dbString += c.getString(c.getColumnIndex("sleep"));
-                dbString += "Mood: ";
-                dbString += c.getString(c.getColumnIndex("mood"));
-                dbString += "Stress: ";
-                dbString += c.getString(c.getColumnIndex("stress"));
-                dbString += "QA1: ";
-                dbString += c.getString(c.getColumnIndex("qa1"));
-                dbString += "QA2: ";
-                dbString += c.getString(c.getColumnIndex("qa2"));
-                dbString += "QA3: ";
-                dbString += c.getString(c.getColumnIndex("qa3"));
-                dbString += "\n";
-            }
+        c.moveToFirst();
+        Log.d("String Message: ", "Move Cursor");
+
+        if(c.getString(c.getColumnIndex("id")) != null){
+            Log.d("String Message: ", "Is not Null");
+            dbString += "ID: ";
+            dbString += c.getString(c.getColumnIndex("id"));
+            dbString += "\r\nDVPRS: ";
+            dbString += c.getString(c.getColumnIndex("dvprs"));
+            dbString += "\r\nActivity: ";
+            dbString += c.getString(c.getColumnIndex("activity"));
+            dbString += "\r\nSleep: ";
+            dbString += c.getString(c.getColumnIndex("sleep"));
+            dbString += "\r\nMood: ";
+            dbString += c.getString(c.getColumnIndex("mood"));
+            dbString += "\r\nStress: ";
+            dbString += c.getString(c.getColumnIndex("stress"));
+            dbString += "\r\nQA1: ";
+            dbString += c.getString(c.getColumnIndex("qa_one"));
+            dbString += "\r\nQA2: ";
+            dbString += c.getString(c.getColumnIndex("qa_two"));
+            dbString += "\r\nQA3: ";
+            dbString += c.getString(c.getColumnIndex("qa_three"));
+            dbString += "\n";
         }
         sqLiteDatabase.close();
+
+        Log.d("String Message: ", "Values = " + dbString);
         return dbString;
     }
 

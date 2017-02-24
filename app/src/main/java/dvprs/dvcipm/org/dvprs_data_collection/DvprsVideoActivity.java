@@ -27,8 +27,6 @@ public class DvprsVideoActivity extends AppCompatActivity {
             }
         }
         final VideoView dvprsVideoView = (VideoView) findViewById(R.id.dvprsVideo);
-        //dvprsVideoView.setVideoPath("/sdcard/Movies/DVPRS.mp4");
-
 
         //start media controller
         MediaController mediaController = new MediaController(this);
