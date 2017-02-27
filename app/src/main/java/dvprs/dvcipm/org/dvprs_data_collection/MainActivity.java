@@ -8,23 +8,17 @@ import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.nio.channels.FileChannel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Listener for Video Button -> DvprsVideoActivity
-        Button startVideo = (Button) findViewById(R.id.dvprsVideo);
+        //Listener for DVPRSVideo Button -> DvprsVideoActivity
+        ImageButton startVideo = (ImageButton) findViewById(R.id.dvprsVideo);
         startVideo.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
@@ -48,8 +42,19 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+        //Listener for Video Select Activity
+        ImageButton videoSelect = (ImageButton) findViewById(R.id.videoSelect);
+        videoSelect.setOnClickListener(
+                new Button.OnClickListener() {
+                    public void onClick(View v) {
+//                        Intent selectIntent = new Intent(MainActivity.this, VideoSelectActivity.class);
+//                        MainActivity.this.startActivity(selectIntent);
+                    }
+                }
+        );
+
         //Listener for DVPRS Data Entry
-        Button startDvprs = (Button) findViewById(R.id.dvprsSurvey);
+        ImageButton startDvprs = (ImageButton) findViewById(R.id.dvprsSurvey);
         startDvprs.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
@@ -60,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         );
 
         //Listener for DVPRS last value recall
-        Button lastDvprs = (Button) findViewById(R.id.dvprsLastScore);
+        ImageButton lastDvprs = (ImageButton) findViewById(R.id.dvprsLastScore);
         lastDvprs.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
