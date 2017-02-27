@@ -6,47 +6,118 @@
     android:layout_height="match_parent"
     tools:context="dvprs.dvcipm.org.dvprs_data_collection.MainActivity">
 
+    <!--<RelativeLayout android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+
+        <!--<ImageView-->
+            <!--android:id="@+id/imageView"-->
+            <!--android:src="@drawable/scale_dvprs"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="fill_parent"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:layout_margin="20dp" />-->
+
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/button1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:src="@drawable/takedvprs"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:text="btn1" />-->
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/button2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:text="btn2" />-->
+
+    <!--</RelativeLayout>-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="270dp">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/dvprsLastScore"
+            android:src="@drawable/lastscore"
+            android:background="@android:color/transparent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/videoSelect"
+            android:src="@drawable/watchvideo"
+            android:background="@android:color/transparent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/dvprsVideo"
+            android:src="@drawable/dvprsvideo"
+            android:background="@android:color/transparent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/dvprsSurvey"
+            android:src="@drawable/takedvprs"
+            android:background="@android:color/transparent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:src="@drawable/scale_dvprs"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/dvprsSurvey"
         android:maxWidth="42dp"
         android:maxHeight="42dp"
         android:scaleType="fitCenter"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginBottom="10dp"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Click here to take the DVPRS"
-        android:id="@+id/dvprsSurvey"
-        android:layout_below="@+id/dvprsVideo"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Click here to take the DVPRS"-->
+        <!--android:id="@+id/dvprsSurvey"-->
+        <!--android:layout_below="@+id/dvprsVideo"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentEnd="true" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Click here to watch the DVPRS video"
-        android:id="@+id/dvprsVideo"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/dvprsSurvey"
-        android:layout_alignParentEnd="true" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Click here to watch the DVPRS video"-->
+        <!--android:id="@+id/dvprsVideo"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignStart="@+id/dvprsSurvey"-->
+        <!--android:layout_alignParentEnd="true" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Click here to view \nlast DVPRS score"
-        android:id="@+id/dvprsLastScore"
-        android:layout_marginBottom="27dp"
-        android:layout_marginEnd="39dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/imageView" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Click here to view \nlast DVPRS score"-->
+        <!--android:id="@+id/dvprsLastScore"-->
+        <!--android:layout_marginBottom="27dp"-->
+        <!--android:layout_marginEnd="39dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignEnd="@+id/imageView" />-->
 
 </RelativeLayout>
