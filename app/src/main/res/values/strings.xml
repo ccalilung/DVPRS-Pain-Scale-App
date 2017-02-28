@@ -26,4 +26,5 @@
     <string name="dvprsAns4">Tend to Agree</string>
     <string name="dvprsAns5">Strongly Agree</string>
     <string name="dvprsEnd">Thank you for completing the Defense and Veterans Pain Rating Scale.\nPlease return this tablet to your healthcare provider.</string>
+    <string name="downloading">Currently downloading: </string>
 </resources>

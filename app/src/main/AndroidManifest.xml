@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dvprs.dvcipm.org.dvprs_data_collection" >
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
@@ -10,6 +12,7 @@
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
+        <service android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService" android:enabled="true" />
         <activity
             android:name=".MainActivity"
             android:largeHeap="true"
@@ -23,15 +26,31 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".VideoActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:largeHeap="true"
+            android:keepScreenOn="true">
+        </activity>
+        <activity
+            android:name=".VideoSelectActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:largeHeap="true"
+            android:keepScreenOn="true" >
+        </activity>
+        <activity
             android:name=".DvprsVideoActivity"
             android:launchMode="singleInstance"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:keepScreenOn="true">
         </activity>
         <activity
             android:name=".DvprsEntry"
             android:launchMode="singleInstance"
             android:screenOrientation="landscape"
-            android:largeHeap="true" >
+            android:largeHeap="true"
+            android:keepScreenOn="true">
         </activity>
         <activity
             android:name=".DvprsLast"
@@ -39,7 +58,6 @@
             android:screenOrientation="landscape"
             android:largeHeap="true" >
         </activity>
-
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data

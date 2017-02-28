@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         videoSelect.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
-//                        Intent selectIntent = new Intent(MainActivity.this, VideoSelectActivity.class);
-//                        MainActivity.this.startActivity(selectIntent);
+                        Intent selectIntent = new Intent(MainActivity.this, VideoSelectActivity.class);
+                        MainActivity.this.startActivity(selectIntent);
                     }
                 }
         );
