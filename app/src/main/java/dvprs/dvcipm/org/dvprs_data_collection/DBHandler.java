@@ -21,6 +21,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String COLUMN_QA1 = "qa_one";
     public static final String COLUMN_QA2 = "qa_two";
     public static final String COLUMN_QA3 = "qa_three";
+    public static final String COLUMN_QA4 = "qa_four";
 
     public DBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
@@ -37,7 +38,8 @@ public class DBHandler extends SQLiteOpenHelper {
                 COLUMN_STRESS + " INTEGER, " +
                 COLUMN_QA1 + " INTEGER, " +
                 COLUMN_QA2 + " INTEGER, " +
-                COLUMN_QA3 + " INTEGER" +
+                COLUMN_QA3 + " INTEGER, " +
+                COLUMN_QA4 + " INTEGER" +
                 ");";
         sqLiteDatabase.execSQL(query);
     }
@@ -59,6 +61,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(COLUMN_QA1, scores.get_qa1());
         values.put(COLUMN_QA2, scores.get_qa2());
         values.put(COLUMN_QA3, scores.get_qa3());
+        values.put(COLUMN_QA4, scores.get_qa4());
         Log.d("String Message: ", "Values = " + values);
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         sqLiteDatabase.insert(TABLE_SCORES, null, values);
@@ -98,6 +101,8 @@ public class DBHandler extends SQLiteOpenHelper {
             dbString += c.getString(c.getColumnIndex("qa_two"));
             dbString += "\r\nQA3: ";
             dbString += c.getString(c.getColumnIndex("qa_three"));
+            dbString += "\r\nQA4: ";
+            dbString += c.getString(c.getColumnIndex("qa_four"));
             dbString += "\n";
         }
         sqLiteDatabase.close();

@@ -13,12 +13,13 @@ public class Scores {
     private int _qa1;
     private int _qa2;
     private int _qa3;
+    private int _qa4;
 
     public Scores() {
 
     }
 
-    public Scores(int dvprs, int activity, int sleep, int mood, int stress, int qa1, int qa2, int qa3) {
+    public Scores(int dvprs, int activity, int sleep, int mood, int stress, int qa1, int qa2, int qa3, int qa4) {
         this._dvprs = dvprs;
         this._activity = activity;
         this._sleep = sleep;
@@ -27,6 +28,7 @@ public class Scores {
         this._qa1 = qa1;
         this._qa2 = qa2;
         this._qa3 = qa3;
+        this._qa4 = qa4;
     }
 
     public void set_id(int _id) {
@@ -65,6 +67,10 @@ public class Scores {
         this._qa3 = _qa3;
     }
 
+    public void set_qa4(int _qa4) {
+        this._qa4 = _qa4;
+    }
+
     public int get_id() {
         return _id;
     }
@@ -99,5 +105,9 @@ public class Scores {
 
     public int get_qa3() {
         return _qa3;
+    }
+
+    public int get_qa4() {
+        return _qa4;
     }
 }

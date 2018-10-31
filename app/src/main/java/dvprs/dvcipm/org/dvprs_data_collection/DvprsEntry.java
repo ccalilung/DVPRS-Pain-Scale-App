@@ -56,7 +56,7 @@ public class DvprsEntry extends AppCompatActivity {
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
-    Integer currentScreen = -99, dvprs = -99, Activity = -99, Sleep = -99, Mood = -99, Stress = -99, qa1 = -99, qa2 = -99, qa3 = -99,
+    Integer currentScreen = -99, dvprs = -99, Activity = -99, Sleep = -99, Mood = -99, Stress = -99, qa1 = -99, qa2 = -99, qa3 = -99, qa4 = -99,
             dvprsLanguageId = 11, dvprsImageId = 12, dvprsGroupId = 13, submitButtonId = 14, dvprsRadio0Id = 0, dvprsRadio1Id = 1,
             dvprsRadio2Id = 2, dvprsRadio3Id = 3, dvprsRadio4Id = 4, dvprsRadio5Id = 5, dvprsRadio6Id = 6, dvprsRadio7Id = 7,
             dvprsRadio8Id = 8, dvprsRadio9Id = 9, dvprsRadio10Id = 10;
@@ -1184,8 +1184,107 @@ public class DvprsEntry extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         int selectedDvprs = dvprsGroup.getCheckedRadioButtonId();
-                        Log.d("Checked", " : " + selectedDvprs);
                         qa3 = selectedDvprs;
+                        Log.d("Checked", " : " + selectedDvprs);
+                        // Perform action on click
+                        ((ViewGroup) dvprsSecondLayout.getParent()).removeView(dvprsSecondLayout);
+                        dvprsQA4Question();
+                    }
+                });
+            }
+        });
+    }
+
+    private void dvprsQA4Question() {
+        currentScreen = 8;
+        final RelativeLayout dvprsSecondLayout = new RelativeLayout(this);
+
+        RelativeLayout.LayoutParams dvprsSupTextLayout = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+        RelativeLayout.LayoutParams dvprsSupGroupLayout = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+        final RelativeLayout.LayoutParams dvprsSubmitLayout = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+        //Widgets to be displayed
+        TextView dvprsLanguage = new TextView(this);
+        RadioGroup dvprsGroup = new RadioGroup(this);
+        final Button submitButton = new Button(this);
+        RadioButton dvprsRadio0 = new RadioButton(this);
+        RadioButton dvprsRadio1 = new RadioButton(this);
+        RadioButton dvprsRadio2 = new RadioButton(this);
+        RadioButton dvprsRadio3 = new RadioButton(this);
+        RadioButton dvprsRadio4 = new RadioButton(this);
+
+        //Rules & Params for various Widgets
+        dvprsSupTextLayout.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+        dvprsSupGroupLayout.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        dvprsSupGroupLayout.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        dvprsSubmitLayout.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        dvprsSubmitLayout.addRule(RelativeLayout.RIGHT_OF, dvprsGroupId);
+        dvprsLanguage.setText(R.string.dvprsQA4Text);
+        dvprsSupGroupLayout.addRule(RelativeLayout.BELOW, dvprsLanguage.getId());
+        dvprsRadio0.setText(R.string.dvprsAns1a);
+        dvprsRadio1.setText(R.string.dvprsAns2a);
+        dvprsRadio2.setText(R.string.dvprsAns3a);
+        dvprsRadio3.setText(R.string.dvprsAns4a);
+        dvprsRadio4.setText(R.string.dvprsAns5a);
+        dvprsRadio0.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
+        dvprsRadio1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
+        dvprsRadio2.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
+        dvprsRadio3.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
+        dvprsRadio4.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
+        dvprsGroup.setPadding(0, 20, 0, 300);
+        dvprsSupTextLayout.setMargins(100, 100, 100, 0);
+        submitButton.setText("Submit");
+        submitButton.setHeight(150);
+        submitButton.setWidth(150);
+        dvprsSubmitLayout.setMargins(20, 0, 0, 300);
+        dvprsLanguage.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
+
+        //Widget IDs
+        dvprsLanguage.setId(11);
+        dvprsGroup.setId(13);
+        submitButton.setId(14);
+        dvprsRadio0.setId(0);
+        dvprsRadio1.setId(1);
+        dvprsRadio2.setId(2);
+        dvprsRadio3.setId(3);
+        dvprsRadio4.setId(4);
+
+
+        //Add Widgets and Params to layout
+        dvprsSecondLayout.addView(dvprsLanguage, dvprsSupTextLayout);
+        dvprsGroup.addView(dvprsRadio0, dvprsSupGroupLayout);
+        dvprsGroup.addView(dvprsRadio1, dvprsSupGroupLayout);
+        dvprsGroup.addView(dvprsRadio2, dvprsSupGroupLayout);
+        dvprsGroup.addView(dvprsRadio3, dvprsSupGroupLayout);
+        dvprsGroup.addView(dvprsRadio4, dvprsSupGroupLayout);
+        dvprsSecondLayout.addView(dvprsGroup, dvprsSupGroupLayout);
+
+        //Start the layout
+        setContentView(dvprsSecondLayout);
+
+
+        //Listeners for First View
+        dvprsGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(final RadioGroup dvprsGroup, int checkedId) {
+                if (findViewById(14) == null) {
+                    dvprsSecondLayout.addView(submitButton, dvprsSubmitLayout);
+                    setContentView(dvprsSecondLayout);
+                }
+                submitButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int selectedDvprs = dvprsGroup.getCheckedRadioButtonId();
+                        Log.d("Checked", " : " + selectedDvprs);
+                        qa4 = selectedDvprs;
                         addScores();
                         // Perform action on click
                         ((ViewGroup) dvprsSecondLayout.getParent()).removeView(dvprsSecondLayout);
@@ -1197,7 +1296,7 @@ public class DvprsEntry extends AppCompatActivity {
     }
 
     private void dvprsEND() {
-        currentScreen = 8;
+        currentScreen = 9;
         final RelativeLayout dvprsSecondLayout = new RelativeLayout(this);
 
         RelativeLayout.LayoutParams dvprsSupTextLayout = new RelativeLayout.LayoutParams(
@@ -1257,7 +1356,7 @@ public class DvprsEntry extends AppCompatActivity {
 
     public void addScores() {
         DBHandler = new DBHandler(this, null, null, 1);
-        Scores scores = new Scores(dvprs, Activity, Sleep, Mood, Stress, qa1, qa2, qa3);
+        Scores scores = new Scores(dvprs, Activity, Sleep, Mood, Stress, qa1, qa2, qa3, qa4);
         DBHandler.addScore(scores);
     }
 
@@ -1333,6 +1432,9 @@ public class DvprsEntry extends AppCompatActivity {
                     dvprsQA2Question();
                     break;
                 case 8:
+                    dvprsQA3Question();
+                    break;
+                case 9:
                     break;
                     //DvprsEntry.this.startActivity(mainIntent);
             }
@@ -1363,6 +1465,9 @@ public class DvprsEntry extends AppCompatActivity {
                     dvprsQA2Question();
                     break;
                 case 8:
+                    dvprsQA3Question();
+                    break;
+                case 9:
                     break;
                     //DvprsEntry.this.startActivity(mainIntent);
             }

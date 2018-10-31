@@ -38,4 +38,5 @@ dependencies {
     compile 'com.amazonaws:aws-android-sdk-core:2.2.+'
     compile 'com.amazonaws:aws-android-sdk-s3:2.2.+'
     compile 'com.amazonaws:aws-android-sdk-ddb:2.2.+'
+    implementation files('libs/aapt2-3.2.1-4818971-linux.jar')
 }

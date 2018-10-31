@@ -31,9 +31,10 @@ public class VideoActivity extends AppCompatActivity {
         }
         final VideoView dvprsVideoView = (VideoView) findViewById(R.id.dvprsVideo);
 
-//        File path = getFilesDir();
+//        File path = getFilesDir(); 
 
-        String path = "/storage/extSdCard/Movies";
+        // String path = "/storage/extSdCard/Movies";
+        String path = "/storage/emulated/0/Movies/";
 
         // Get Intent info
         Bundle b = getIntent().getExtras();
