@@ -43,15 +43,15 @@ public class MainActivity extends AppCompatActivity {
         );
 
         //Listener for Video Select Activity
-        ImageButton videoSelect = (ImageButton) findViewById(R.id.videoSelect);
-        videoSelect.setOnClickListener(
-                new Button.OnClickListener() {
-                    public void onClick(View v) {
-                        Intent selectIntent = new Intent(MainActivity.this, VideoSelectActivity.class);
-                        MainActivity.this.startActivity(selectIntent);
-                    }
-                }
-        );
+        // ImageButton videoSelect = (ImageButton) findViewById(R.id.videoSelect);
+        // videoSelect.setOnClickListener(
+        //         new Button.OnClickListener() {
+        //             public void onClick(View v) {
+        //                 Intent selectIntent = new Intent(MainActivity.this, VideoSelectActivity.class);
+        //                 MainActivity.this.startActivity(selectIntent);
+        //             }
+        //         }
+        // );
 
         //Listener for DVPRS Data Entry
         ImageButton startDvprs = (ImageButton) findViewById(R.id.dvprsSurvey);
@@ -65,15 +65,15 @@ public class MainActivity extends AppCompatActivity {
         );
  
         //Listener for DVPRS last value recall
-        ImageButton lastDvprs = (ImageButton) findViewById(R.id.dvprsLastScore);
-        lastDvprs.setOnClickListener(
-                new Button.OnClickListener() {
-                    public void onClick(View v) {
-                        Intent recallIntent = new Intent(MainActivity.this, DvprsLast.class);
-                        MainActivity.this.startActivity(recallIntent);
-                    }
-                }
-        );
+        // ImageButton lastDvprs = (ImageButton) findViewById(R.id.dvprsLastScore);
+        // lastDvprs.setOnClickListener(
+        //         new Button.OnClickListener() {
+        //             public void onClick(View v) {
+        //                 Intent recallIntent = new Intent(MainActivity.this, DvprsLast.class);
+        //                 MainActivity.this.startActivity(recallIntent);
+        //             }
+        //         }
+        // );
 
         ImageView dvprsImage = (ImageView) findViewById(R.id.imageView);
         dvprsImage.setOnTouchListener(new View.OnTouchListener() {
